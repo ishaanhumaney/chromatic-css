@@ -39,21 +39,16 @@ python3 -m http.server 8000
 Open your internet browser and navigate directly to http://localhost:8000.
 ```
 ## Project Structure
+```bash
 ├── .github/
-
 │   └── workflows/
-
 │       └── ci.yml        # CI workflow for linting code quality
-
 ├── .gitignore            # Excludes local IDE caches and system junk
-
 ├── LICENSE               # Open-source MIT terms coverage
-
 ├── README.md             # Documentation asset
-
 ├── index.html            # Semantic elements and input state elements
-
 └── style.css             # Grid systems, layouts, and combinator states
+```
 
 ## Roadmap
 [ ] WCAG Contrast Validation Badges: Integrate native calculated luminosity alerts using CSS color contrast evaluation standards directly inside validation cards.
