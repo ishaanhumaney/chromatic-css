@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure CSS Color Palette Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Pure CSS Color Palette</h1>
+            <p>Select a color swatch to inspect its composition and preview text contrast harmonies.</p>
+        </header>
+
+        <input type="radio" name="palette-state" id="color-nordic" checked>
+        <input type="radio" name="palette-state" id="color-sunset">
+        <input type="radio" name="palette-state" id="color-forest">
+        <input type="radio" name="palette-state" id="color-neon">
+        <input type="radio" name="palette-state" id="color-amber">
+        <input type="radio" name="palette-state" id="color-plum">
+
+        <div class="swatch-picker">
+            <label for="color-nordic" class="swatch-wrapper">
+                <span class="swatch label-nordic"></span>
+                <span class="color-name">Nordic Blue</span>
+            </label>
+            <label for="color-sunset" class="swatch-wrapper">
+                <span class="swatch label-sunset"></span>
+                <span class="color-name">Sunset Coral</span>
+            </label>
+            <label for="color-forest" class="swatch-wrapper">
+                <span class="swatch label-forest"></span>
+                <span class="color-name">Forest Sage</span>
+            </label>
+            <label for="color-neon" class="swatch-wrapper">
+                <span class="swatch label-neon"></span>
+                <span class="color-name">Cyber Neon</span>
+            </label>
+            <label for="color-amber" class="swatch-wrapper">
+                <span class="swatch label-amber"></span>
+                <span class="color-name">Warm Amber</span>
+            </label>
+            <label for="color-plum" class="swatch-wrapper">
+                <span class="swatch label-plum"></span>
+                <span class="color-name">Deep Plum</span>
+            </label>
+        </div>
+
+        <div class="preview-zone">
+            <div class="preview-box light-text-box">
+                <h3>Light Text Preview</h3>
+                <p class="preview-demo-text">This panel demonstrates white text readability against the primary dominant shade.</p>
+                
+                <div class="composition-card">
+                    <h4>Color Composition</h4>
+                    <ul class="comp-list">
+                        <li class="comp-nordic"><strong>HEX:</strong> #2b6cb0 &nbsp;|&nbsp; <strong>RGB:</strong> (43, 108, 176)</li>
+                        <li class="comp-sunset"><strong>HEX:</strong> #dd6b20 &nbsp;|&nbsp; <strong>RGB:</strong> (221, 107, 32)</li>
+                        <li class="comp-forest"><strong>HEX:</strong> #2f855a &nbsp;|&nbsp; <strong>RGB:</strong> (47, 133, 90)</li>
+                        <li class="comp-neon"><strong>HEX:</strong> #b83280 &nbsp;|&nbsp; <strong>RGB:</strong> (184, 50, 128)</li>
+                        <li class="comp-amber"><strong>HEX:</strong> #d69e2e &nbsp;|&nbsp; <strong>RGB:</strong> (214, 158, 46)</li>
+                        <li class="comp-plum"><strong>HEX:</strong> #6b46c1 &nbsp;|&nbsp; <strong>RGB:</strong> (107, 70, 193)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="preview-box dark-text-box">
+                <h3>Dark Text Preview</h3>
+                <p class="preview-demo-text">This panel demonstrates dark slate text readability against the lighter tint variant.</p>
+                
+                <div class="composition-card">
+                    <h4>Color Composition</h4>
+                    <ul class="comp-list">
+                        <li class="comp-nordic"><strong>HEX:</strong> #bee3f8 &nbsp;|&nbsp; <strong>RGB:</strong> (190, 227, 248)</li>
+                        <li class="comp-sunset"><strong>HEX:</strong> #feebc8 &nbsp;|&nbsp; <strong>RGB:</strong> (254, 235, 200)</li>
+                        <li class="comp-forest"><strong>HEX:</strong> #c6f6d5 &nbsp;|&nbsp; <strong>RGB:</strong> (198, 246, 213)</li>
+                        <li class="comp-neon"><strong>HEX:</strong> #fed7e2 &nbsp;|&nbsp; <strong>RGB:</strong> (254, 215, 226)</li>
+                        <li class="comp-amber"><strong>HEX:</strong> #fef3c7 &nbsp;|&nbsp; <strong>RGB:</strong> (254, 243, 199)</li>
+                        <li class="comp-plum"><strong>HEX:</strong> #e9d8fd &nbsp;|&nbsp; <strong>RGB:</strong> (233, 216, 253)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="creator-badge">
+            <span class="badge-tag">Light Text Preview</span>
+            <p class="creator-name">Project created by <strong>Ishaan Humaney</strong></p>
+            <p class="creator-email">Email: <a href="mailto:ishaanhumaney07@gmail.com">ishaanhumaney07@gmail.com</a></p>
+            <a href="https://www.linkedin.com/in/ishaan-humaney-3583a6418" class="linkedin-link" target="_blank" rel="noopener">LinkedIn Profile</a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
