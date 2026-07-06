@@ -1,0 +1,278 @@
+/* Base Layout Setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f7fafc;
+    color: #2d3748;
+    line-height: 1.6;
+    padding: 2rem 1rem 10rem 1rem; /* Generous bottom padding to prevent sticky footer overlap */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+header h1 {
+    font-size: 2.25rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+/* Hide input states completely */
+input[name="palette-state"] {
+    display: none;
+}
+
+/* Interactive Swatch Bar */
+.swatch-picker {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.swatch-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+}
+
+.swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    margin-bottom: 0.5rem;
+}
+
+.color-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #4a5568;
+    transition: color 0.2s ease;
+}
+
+.swatch-wrapper:hover .swatch {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Color Setup values */
+.label-nordic { background-color: #2b6cb0; }
+.label-sunset { background-color: #dd6b20; }
+.label-forest { background-color: #2f855a; }
+.label-neon   { background-color: #b83280; }
+.label-amber  { background-color: #d69e2e; }
+.label-plum   { background-color: #6b46c1; }
+
+/* Active Selector Indicator Updates */
+#color-nordic:checked ~ .swatch-picker [for="color-nordic"] .swatch,
+#color-sunset:checked ~ .swatch-picker [for="color-sunset"] .swatch,
+#color-forest:checked ~ .swatch-picker [for="color-forest"] .swatch,
+#color-neon:checked ~ .swatch-picker [for="color-neon"] .swatch,
+#color-amber:checked ~ .swatch-picker [for="color-amber"] .swatch,
+#color-plum:checked ~ .swatch-picker [for="color-plum"] .swatch {
+    transform: scale(1.1);
+    border-color: #1a202c;
+}
+
+#color-nordic:checked ~ .swatch-picker [for="color-nordic"] .color-name,
+#color-sunset:checked ~ .swatch-picker [for="color-sunset"] .color-name,
+#color-forest:checked ~ .swatch-picker [for="color-forest"] .color-name,
+#color-neon:checked ~ .swatch-picker [for="color-neon"] .color-name,
+#color-amber:checked ~ .swatch-picker [for="color-amber"] .color-name,
+#color-plum:checked ~ .swatch-picker [for="color-plum"] .color-name {
+    color: #1a202c;
+    font-weight: 700;
+}
+
+/* Preview Windows Layout */
+.preview-zone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 650px) {
+    .preview-zone {
+        grid-template-columns: 1fr;
+    }
+}
+
+.preview-box {
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.preview-box h3 {
+    margin-bottom: 0.5rem;
+}
+
+.preview-demo-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Metadata Card Inside Preview Blocks */
+.composition-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-text-box .composition-card {
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.composition-card h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.comp-list li {
+    list-style: none;
+    font-family: monospace;
+    font-size: 0.85rem;
+    display: none;
+}
+
+/* Bottom Right Sticky Creator Badge (The signature box) */
+.creator-badge {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    width: 290px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    font-size: 0.85rem;
+    z-index: 100;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.badge-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    opacity: 0.75;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding-bottom: 2px;
+    width: 100%;
+}
+
+.creator-name {
+    margin-bottom: 0.25rem;
+}
+
+.creator-email {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.creator-badge a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.linkedin-link {
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+/* ==========================================================================
+   State Handling for Content Toggling & Left Panel Previews
+   ========================================================================== */
+
+/* 1. Nordic Blue Theme */
+#color-nordic:checked ~ .preview-zone .light-text-box { background-color: #2b6cb0; color: #ebf8ff; }
+#color-nordic:checked ~ .preview-zone .dark-text-box { background-color: #bee3f8; color: #2a4365; }
+#color-nordic:checked ~ .preview-zone .comp-list .comp-nordic { display: block; }
+
+/* 2. Sunset Coral Theme */
+#color-sunset:checked ~ .preview-zone .light-text-box { background-color: #dd6b20; color: #fffaf0; }
+#color-sunset:checked ~ .preview-zone .dark-text-box { background-color: #feebc8; color: #7b341e; }
+#color-sunset:checked ~ .preview-zone .comp-list .comp-sunset { display: block; }
+
+/* 3. Forest Sage Theme */
+#color-forest:checked ~ .preview-zone .light-text-box { background-color: #2f855a; color: #f0fff4; }
+#color-forest:checked ~ .preview-zone .dark-text-box { background-color: #c6f6d5; color: #22543d; }
+#color-forest:checked ~ .preview-zone .comp-list .comp-forest { display: block; }
+
+/* 4. Cyber Neon Theme */
+#color-neon:checked ~ .preview-zone .light-text-box { background-color: #b83280; color: #fff5f7; }
+#color-neon:checked ~ .preview-zone .dark-text-box { background-color: #fed7e2; color: #702459; }
+#color-neon:checked ~ .preview-zone .comp-list .comp-neon { display: block; }
+
+/* 5. Warm Amber Theme */
+#color-amber:checked ~ .preview-zone .light-text-box { background-color: #d69e2e; color: #fffaf0; }
+#color-amber:checked ~ .preview-zone .dark-text-box { background-color: #fef3c7; color: #744210; }
+#color-amber:checked ~ .preview-zone .comp-list .comp-amber { display: block; }
+
+/* 6. Deep Plum Theme */
+#color-plum:checked ~ .preview-zone .light-text-box { background-color: #6b46c1; color: #f7fafc; }
+#color-plum:checked ~ .preview-zone .dark-text-box { background-color: #e9d8fd; color: #44337a; }
+#color-plum:checked ~ .preview-zone .comp-list .comp-plum { display: block; }
+
+
+/* ==========================================================================
+   Isolated State Handling for Bottom-Right Signature Box (Light Text Previews)
+   ========================================================================== */
+
+#color-nordic:checked ~ .creator-badge {
+    background-color: #2b6cb0;
+    color: #ebf8ff;
+}
+
+#color-sunset:checked ~ .creator-badge {
+    background-color: #dd6b20;
+    color: #fffaf0;
+}
+
+#color-forest:checked ~ .creator-badge {
+    background-color: #2f855a;
+    color: #f0fff4;
+}
+
+#color-neon:checked ~ .creator-badge {
+    background-color: #b83280;
+    color: #fff5f7;
+}
+
+#color-amber:checked ~ .creator-badge {
+    background-color: #d69e2e;
+    color: #fffaf0;
+}
+
+#color-plum:checked ~ .creator-badge {
+    background-color: #6b46c1;
+    color: #f7fafc;
+}
