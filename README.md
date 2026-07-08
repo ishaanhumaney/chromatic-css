@@ -40,9 +40,6 @@ Open your internet browser and navigate directly to http://localhost:8000.
 ```
 ## Project Structure
 ```bash
-├── .github/
-│   └── workflows/
-│       └── ci.yml        # CI workflow for linting code quality
 ├── .gitignore            # Excludes local IDE caches and system junk
 ├── LICENSE               # Open-source MIT terms coverage
 ├── README.md             # Documentation asset
